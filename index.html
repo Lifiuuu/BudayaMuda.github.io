@@ -490,36 +490,6 @@ $(window).on("load",function (){
 	topOffset: -63
 	});
 });
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Mengambil data formulir
-    $name = htmlspecialchars($_POST['full-name']);
-    $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
-
-    // Menentukan alamat email penerima
-    $to = "yafisalsabila2006@gmail.com"; // Ganti dengan email Anda
-
-    // Membuat subjek dan isi pesan
-    $email_subject = "Pesan Baru dari $name - $subject";
-    $email_body = "Nama: $name\n";
-    $email_body .= "Email: $email\n";
-    $email_body .= "Subjek: $subject\n";
-    $email_body .= "Pesan: $message\n";
-
-    // Header email (termasuk pengirim)
-    $headers = "From: $email\n";
-    $headers .= "Reply-To: $email\n";
-
-    // Mengirim email
-    if (mail($to, $email_subject, $email_body, $headers)) {
-        echo "Pesan Anda telah dikirim!";
-    } else {
-        echo "Terjadi kesalahan, pesan tidak dapat dikirim.";
-    }
-}
-?>
 	
 </script>
 </body>
